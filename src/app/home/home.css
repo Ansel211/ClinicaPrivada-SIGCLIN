@@ -1,223 +1,63 @@
 :host {
-  --primary-color: #46c6cf;
-  --primary-dark: #0284c7;
-  --bg-light: #f0f9ff;
-  --text-dark: #0c4a6e;
-  --text-muted: #64748b;
-  --white: #ffffff;
-}
-
-/* Configuración para ocupar el 100% de la altura de la pantalla */
-:host {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 main {
-  flex: 1; /* Estira la sección central para ocupar todo el espacio restante */
+  flex: 1;
+}
+
+/* Colores personalizados */
+:root {
+  --primary-dark: #0284c7;
 }
 
 /* Header */
 .header {
   background-color: #0f172a;
-  border-bottom: 3px solid var(--primary-color);
-  padding: 18px 0;
+  border-bottom: 3px solid #46c6cf;
 }
 
-.header-container {
-  max-width: 1300px; /* Ancho ampliado para pantallas completas */
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.logo-text {
+.brand .logo-text {
   font-weight: 900;
   font-size: 1.8rem;
-  color: var(--white);
+  color: #ffffff;
 }
 
-.app-title {
+.brand .app-title {
   color: #38bdf8;
   font-size: 0.9rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.btn-header-login {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  transition: background-color 0.2s ease;
+/* Hero Section con imagen de fondo estilo "Banner" */
+.hero-section-bg {
+  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+              url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+  padding: 100px 0;
+  color: #ffffff;
 }
 
-.btn-header-login:hover {
-  background-color: #0369a1;
+/* Imágenes de los iconos en las tarjetas */
+.card-icon-img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
 }
 
-/* Hero Section */
-.hero-section {
-  background-color: var(--bg-light);
-  border-bottom: 1px solid #bae6fd;
-  padding: 80px 24px; /* Mayor padding vertical */
-}
-
-.hero-container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.hero-text {
-  max-width: 850px; /* Mayor espacio para el texto */
-}
-
-.badge-tag {
-  background-color: #e0f2fe;
-  color: var(--primary-dark);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: 1px solid #bae6fd;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.hero-text h1 {
-  font-size: 2.75rem; /* Título significativamente más grande */
-  color: var(--text-dark);
-  line-height: 1.25;
-  margin-bottom: 18px;
-  font-weight: 800;
-}
-
-.hero-text p {
-  font-size: 1.2rem; /* Subtítulo con más jerarquía */
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.btn-primary {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: background-color 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #0369a1;
-}
-
-.btn-secondary {
-  background-color: var(--white);
-  color: var(--primary-dark);
-  border: 1px solid #cbd5e1;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: background-color 0.2s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #f8fafc;
-}
-
-/* Services Section */
-.services-section {
-  padding: 70px 24px; /* Relleno amplio */
-}
-
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.services-section h2 {
-  font-size: 1.75rem;
-  color: var(--text-dark);
-  margin-bottom: 30px;
-  font-weight: 800;
-}
-
-.grid-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tarjetas ligeramente más anchas */
-  gap: 28px;
-}
-
+/* Estilo y alineación de Tarjetas */
 .card-service {
-  background: var(--white);
-  padding: 32px; /* Mayor espacio dentro de cada tarjeta */
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-}
-
-.card-service h3 {
-  color: var(--text-dark);
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.card-service p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  flex: 1; /* Empuja el botón al final de la tarjeta */
-}
-
-.card-service a {
-  color: var(--primary-dark);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
+.card-service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Footer */
 .footer {
   background-color: #0f172a;
-  color: #94a3b8;
-  padding: 30px 24px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.footer p {
-  margin: 4px 0;
 }

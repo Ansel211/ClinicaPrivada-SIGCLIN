@@ -1,61 +1,85 @@
-<header class="header">
-  <div class="header-container">
-    <div class="brand">
+<header class="header py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="brand d-flex align-items-center gap-3">
       <span class="logo-text">SIGCLIN</span>
-      <span class="app-title">Sistema de Gestión de Clínicas</span>
+      <span class="app-title text-uppercase border-start ps-3 border-secondary">Sistema de Gestión de Clínicas</span>
     </div>
-    <a routerLink="/login" class="btn-header-login">Ingresar al Sistema</a>
+    <a routerLink="/login" class="btn btn-primary fw-bold px-4">Ingresar al Sistema</a>
   </div>
 </header>
 
 <main>
-  <section class="hero-section">
-    <div class="hero-container">
-      <div class="hero-text">
-        <span class="badge-tag">Plataforma Intranet</span>
-        <h1>Portal Único del Personal Asistencial y Clínico</h1>
-        <p>
+  <!--  Banner Fotográfico -->
+  <section class="hero-section-bg">
+    <div class="container text-center text-md-start">
+      <div style="max-width: 800px;">
+        <span class="badge bg-primary text-white mb-3 px-3 py-2 rounded-pill text-uppercase fw-bold">
+          Intranet Institucional
+        </span>
+        <h1 class="fw-bold display-4 mb-3 text-white">Portal Único del Personal Asistencial y Clínico</h1>
+        <p class="lead text-light mb-4 fs-5">
           Acceso restringido para personal médico, enfermería y gestión de historias clínicas. 
           Si no cuenta con sus credenciales de acceso, solicítelas en la Jefatura de TI.
         </p>
-        <div class="hero-buttons">
-          <a routerLink="/login" class="btn-primary">Iniciar Sesión (SIGCLIN)</a>
-          <a href="#soporte" class="btn-secondary">Soporte y Manuales</a>
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+          <a routerLink="/login" class="btn btn-primary btn-lg fw-bold px-4">Iniciar Sesión (SIGCLIN)</a>
+          <a href="#soporte" class="btn btn-outline-light btn-lg fw-bold px-4">Soporte y Manuales</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="services-section">
-    <div class="container">
-      <h2>Accesos Rápidos del Personal</h2>
-      <div class="grid-services">
-        <div class="card-service">
-          <div class="card-icon">📋</div>
-          <h3>Gestión de Citas y Triaje</h3>
-          <p>Módulo asignado a enfermería para recepción, toma de funciones vitales y asignación de pacientes.</p>
-          <a routerLink="/login">Ir al módulo &rarr;</a>
+  <!-- Módulos con las Ilustraciones de la Imagen -->
+  <section class="services-section py-5 bg-light">
+    <div class="container py-3">
+      <h2 class="fw-bold mb-4 text-dark fs-3">Accesos Rápidos del Personal</h2>
+      
+      <div class="row g-4">
+        
+        
+        <div class="col-12 col-md-4">
+          <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/883/883407.png" alt="Citas y Triaje" class="card-icon-img">
+            </div>
+            <h3 class="h5 fw-bold text-dark">Gestión de Citas y Triaje</h3>
+            <p class="text-muted flex-grow-1">Módulo asignado a enfermería para recepción, toma de funciones vitales y asignación de pacientes.</p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary">Ir al módulo &rarr;</a>
+          </div>
         </div>
-        <div class="card-service">
-          <div class="card-icon">👨‍⚕️</div>
-          <h3>Historia Clínica Electrónica</h3>
-          <p>Consulta e ingreso de diagnósticos, recetas médicas y evolución del paciente en consulta externa.</p>
-          <a routerLink="/login">Ir al módulo &rarr;</a>
+
+        
+        <div class="col-12 col-md-4">
+          <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png" alt="Historia Clínica" class="card-icon-img">
+            </div>
+            <h3 class="h5 fw-bold text-dark">Historia Clínica Electrónica</h3>
+            <p class="text-muted flex-grow-1">Consulta e ingreso de diagnósticos, recetas médicas y evolución del paciente en consulta externa.</p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary">Ir al módulo &rarr;</a>
+          </div>
         </div>
-        <div class="card-service">
-          <div class="card-icon">🛠️</div>
-          <h3>Soporte Técnico de TI</h3>
-          <p>¿Olvidó su contraseña o requiere restablecer su usuario institucional? Contacte a Mesa de Ayuda.</p>
-          <a href="#soporte">Mesa de ayuda &rarr;</a>
+
+       
+        <div class="col-12 col-md-4">
+          <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" alt="Soporte TI" class="card-icon-img">
+            </div>
+            <h3 class="h5 fw-bold text-dark">Soporte Técnico de TI</h3>
+            <p class="text-muted flex-grow-1">¿Olvidó su contraseña o requiere restablecer su usuario institucional? Contacte a Mesa de Ayuda.</p>
+            <a href="#soporte" class="text-decoration-none fw-bold text-primary">Mesa de ayuda &rarr;</a>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <div class="footer-container">
-    <p>&copy; 2026 SIGCLIN - Sistema de Gestión de Clínicas. Todos los derechos reservados.</p>
-    <p>Acceso exclusivo para personal autorizado de la red de salud.</p>
+<footer class="footer text-white py-4 text-center">
+  <div class="container">
+    <p class="mb-1">&copy; 2026 SIGCLIN - Sistema de Gestión de Clínicas. Todos los derechos reservados.</p>
+    <p class="small text-secondary mb-0">Acceso exclusivo para personal autorizado de la red de salud.</p>
   </div>
 </footer>
