@@ -9,9 +9,21 @@
 </header>
 
 <main>
-  <!--  Banner Fotográfico -->
-  <section class="hero-section-bg">
-    <div class="container text-center text-md-start">
+  <!-- Hero Section (Banner) -->
+  <section class="hero-section">
+    
+    <!-- CAPA 1: Las imágenes dinámicas -->
+    <img *ngFor="let img of imagenesBanner; let i = index" 
+         [src]="img" 
+         class="hero-bg-img" 
+         [class.active]="i === indiceActual" 
+         alt="Fondo de hospital">
+
+    <!-- CAPA 2: Filtro oscuro sobre las fotos -->
+    <div class="hero-overlay"></div>
+
+    <!-- CAPA 3: Los Textos y Botones -->
+    <div class="container hero-content text-center text-md-start">
       <div style="max-width: 800px;">
         <span class="badge bg-primary text-white mb-3 px-3 py-2 rounded-pill text-uppercase fw-bold">
           Intranet Institucional
@@ -27,54 +39,79 @@
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- Módulos con las Ilustraciones de la Imagen -->
+  <!-- Módulos Inferiores -->
+  
+<!-- Módulos de Accesos Rápidos del Sistema -->
   <section class="services-section py-5 bg-light">
     <div class="container py-3">
-      <h2 class="fw-bold mb-4 text-dark fs-3">Accesos Rápidos del Personal</h2>
+      <h2 class="fw-bold mb-4 text-dark fs-3 text-center text-md-start">Accesos Rápidos al Sistema</h2>
       
       <div class="row g-4">
         
-        
-        <div class="col-12 col-md-4">
+        <!-- Módulo 1: Admisión y Citas -->
+        <div class="col-12 col-md-6 col-lg-3">
           <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
             <div class="mb-3">
-              <img src="https://cdn-icons-png.flaticon.com/512/883/883407.png" alt="Citas y Triaje" class="card-icon-img">
+              <img src="https://cdn-icons-png.flaticon.com/512/883/883407.png" alt="Admisión" class="card-icon-img">
             </div>
-            <h3 class="h5 fw-bold text-dark">Gestión de Citas y Triaje</h3>
-            <p class="text-muted flex-grow-1">Módulo asignado a enfermería para recepción, toma de funciones vitales y asignación de pacientes.</p>
-            <a routerLink="/login" class="text-decoration-none fw-bold text-primary">Ir al módulo &rarr;</a>
+            <h3 class="h5 fw-bold text-dark">Admisión y Citas</h3>
+            <p class="text-muted flex-grow-1 small">
+              Recepción de pacientes, apertura de historias clínicas, emisión de citas y órdenes de emergencia.
+            </p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary small">Acceder a Admisión &rarr;</a>
           </div>
         </div>
 
-        
-        <div class="col-12 col-md-4">
+        <!-- Módulo 2: Portal Médico -->
+        <div class="col-12 col-md-6 col-lg-3">
           <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
             <div class="mb-3">
-              <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png" alt="Historia Clínica" class="card-icon-img">
+              <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png" alt="Médico" class="card-icon-img">
             </div>
-            <h3 class="h5 fw-bold text-dark">Historia Clínica Electrónica</h3>
-            <p class="text-muted flex-grow-1">Consulta e ingreso de diagnósticos, recetas médicas y evolución del paciente en consulta externa.</p>
-            <a routerLink="/login" class="text-decoration-none fw-bold text-primary">Ir al módulo &rarr;</a>
+            <h3 class="h5 fw-bold text-dark">Consultorio Médico</h3>
+            <p class="text-muted flex-grow-1 small">
+              Atención de citas, registro de diagnósticos en historia clínica y emisión de recetas electrónicas.
+            </p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary small">Acceder a Consultorios &rarr;</a>
           </div>
         </div>
 
-       
-        <div class="col-12 col-md-4">
+        <!-- Módulo 3: Farmacia -->
+        <div class="col-12 col-md-6 col-lg-3">
           <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
             <div class="mb-3">
-              <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" alt="Soporte TI" class="card-icon-img">
+              <img src="https://cdn-icons-png.flaticon.com/512/3028/3028549.png" alt="Farmacia" class="card-icon-img">
             </div>
-            <h3 class="h5 fw-bold text-dark">Soporte Técnico de TI</h3>
-            <p class="text-muted flex-grow-1">¿Olvidó su contraseña o requiere restablecer su usuario institucional? Contacte a Mesa de Ayuda.</p>
-            <a href="#soporte" class="text-decoration-none fw-bold text-primary">Mesa de ayuda &rarr;</a>
+            <h3 class="h5 fw-bold text-dark">Farmacia y Medicinas</h3>
+            <p class="text-muted flex-grow-1 small">
+              Registro de órdenes de entrega de medicamentos basadas en la receta médica del paciente.
+            </p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary small">Acceder a Farmacia &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Módulo 4: Caja y Administración -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-service h-100 p-4 border-0 shadow-sm rounded-3">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" alt="Caja y Admin" class="card-icon-img">
+            </div>
+            <h3 class="h5 fw-bold text-dark">Caja y Finanzas</h3>
+            <p class="text-muted flex-grow-1 small">
+              Cobro de deudas pendientes (citas, emergencias, medicinas), apertura/cuadre de caja y comprobantes.
+            </p>
+            <a routerLink="/login" class="text-decoration-none fw-bold text-primary small">Acceder a Caja &rarr;</a>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+
 </main>
 
 <footer class="footer text-white py-4 text-center">
